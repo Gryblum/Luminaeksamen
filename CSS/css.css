@@ -20,7 +20,7 @@
 
 body {
   /* Skrifttype og størrelse */
-font-family: "Cutive Mono", monospace;
+font-family: "Inter", monospace;
 font-size: 1.5rem;
 background-color: #F0EAE2;
 }
@@ -38,31 +38,42 @@ background-color: #F0EAE2;
 
 .top-nav {
   width: 100%;
-  background-color: #8D664F;
-  height: 40px;
+  background-color: #C3AC98;
+  height: 100px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Venstre og højre side */
+  justify-content: space-between; /* Keep space between left, center, right */
   align-items: center;
-  padding: 0 32px; /* Luft til kanterne */
-  gap: 0; /* Fjern stort hul */
+  padding: 0 32px;
+  gap: 0;
 }
 
-.nav-left, .nav-right {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #fff;
-  padding: 0 8px; /* Mindre padding */
+.nav-left, .nav-right, .nav-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-center {
+  justify-content: center;
+}
+
+.nav-right {
+  justify-content: flex-end;
 }
 
 .topnav-logo {
-  height: 20px;
-  max-height: 20px;
+  height: 100px;
+  max-height: 100px;
   width: auto;
-  max-width: 40px;
+  max-width: 100px;
   vertical-align: middle;
   margin-right: 8px;
   display: inline-block;
@@ -71,7 +82,7 @@ background-color: #F0EAE2;
 
 
 body {
-  margin-top: 40px; /* Samme som nav-højde */
+  margin-top: 100px; /* Samme som nav-højde */
 }
 
 /* Style for main menu */
@@ -82,7 +93,7 @@ body {
 top: 40px; /*lige under top-nav */
 left: 0;
 width: 100%;
-background: #F0EAE280; /* Gennemsigtig sort baggrund */
+background: #F0EAE2; 
 z-index: 1100;
 display: flex;
 justify-content: center;
@@ -114,23 +125,38 @@ padding: 64px 0;
 
 /* Style for header */
 .main-header {
-  width: 100%;
+  position: relative; /* place video absolutely inside */
+  width: 50%;
   min-height: 800px;
-  background: url('../Images/Lumina Hero Img.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  overflow: hidden;
 }
+
+/* video that covers the header */
+.header-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* keep header content above the video */
 .header-content {
+  position: relative;
+  z-index: 2;
   background: none;
   padding: 32px;
   border-radius: 16px;
   text-align: center;
-  color: #fff;
+  color: #C3AC98;
 }
 
-/* style for header knapper */
+/* style for header knappe */
 .shop-now-button {
   position: absolute;
   left: 100px;
@@ -145,12 +171,12 @@ padding: 64px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.2s;
   z-index: 2;
-  border: 2px solid #E4C6A0; /* evt. kant for synlighed */
+  border: 2px solid #C3AC98; /* evt. kant for synlighed */
 }
 
 .shop-now-button:hover {
   background: rgb(240, 234, 226); /* Lidt mindre gennemsigtig ved hover */
-  color: #fff;
+  color: #C3AC98;
 }
 /* Style for info column */
 .info-column {
@@ -159,7 +185,7 @@ padding: 64px 0;
   flex-direction: row; /*lægger boksene vandret */
   justify-content: center; /*Centrere boksene på siden*/
   align-items: flex-start;
-  gap: 64px;
+  gap: 8px;
   margin: 150px auto;
   max-width: 1200px; /* Maksimal bredde for kolonnen */
   width: 100%;
@@ -214,7 +240,7 @@ padding: 64px 0;
 }
 
 .product-card {
-  background: #F0EAE2;
+  background: #AB8C78;
   flex: 1 1 0;
   min-width: 0; /* Sikrer at kortene kan skaleres ned */
   max-width: 100%; /* Maksimal bredde for kortene */
@@ -239,25 +265,25 @@ padding: 64px 0;
 
 
 
-/* featured produkter sektion */
-.featured-products {
+/* totebag sektion */
+.totebag-card {
   margin: 100px auto;
   text-align: center;
 }
 
--featured-title {
+.totebag-title {
   font-size: 2em;
   color: #8D664F
 }
 
-.featured-subtitle {
+.totebag-subtitle {
   font-size: 1.2em;
   color: #8D664F;
   margin-bottom: 40px;
   font-weight: 300;
 }
 
-.featured-row {
+.totebag-row {
   display: flex;
   justify-content: center;
   gap: 48px;
@@ -266,7 +292,7 @@ padding: 64px 0;
   margin: 0 auto;
 }
 
-.featured-card {
+.totebag-card {
   background: #F0EAE2;
   flex: 1 1 0;
   min-width: 0; /* Sikrer at kortene kan skaleres ned */
@@ -279,7 +305,7 @@ box-sizing: border-box;
 }
 
 
-.featured-image {
+.totebag-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -295,7 +321,7 @@ box-sizing: border-box;
 
 
 /* Style for Instagram sektion */
-.instagram-row {
+.totebag-row {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -304,7 +330,7 @@ box-sizing: border-box;
   max-width: 1200px; /* Maksimal bredde for kolonnen */
 }
 
-.row-instagram {
+.totebag-row img {
   width: 25%; /* Hvert billede tager 25% af bredden */
   height: auto;
   object-fit: cover; /* Billederne dækker deres container */
@@ -370,5 +396,5 @@ box-sizing: border-box;
   display: block;
   margin-left: 0;   /* Flytter logoet til højre */
   margin-right: auto;
-}
 
+}
