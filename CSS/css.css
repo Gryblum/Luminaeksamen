@@ -125,9 +125,9 @@ padding: 64px 0;
 
 /* Style for header */
 .main-header {
-  position: relative; /* place video absolutely inside */
-  width: 50%;
-  min-height: 800px;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,72 +149,129 @@ padding: 64px 0;
 .header-content {
   position: relative;
   z-index: 2;
-  background: none;
-  padding: 32px;
-  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #C3AC98;
+  width: 100%;
+  height: 100%;
 }
 
-/* style for header knappe */
+/* style for header knapper */
 .shop-now-button {
   position: absolute;
-  left: 100px;
-  bottom: 100px;
-  background: rgba(141, 102, 79, 0.2); /* Gennemsigtig brun */
-  color: #E4C6A0;
-  padding: 48px 62px;
-  border-radius: 48px;
-  font-size: 1.1rem;
-  font-weight: bold;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #8D664F;
+  color: #FFFFFF;
+  padding: 32px 48px;
+  border-radius: 32px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.2s;
-  z-index: 2;
-  border: 2px solid #C3AC98; /* evt. kant for synlighed */
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  z-index: 3;
 }
 
 .shop-now-button:hover {
-  background: rgb(240, 234, 226); /* Lidt mindre gennemsigtig ved hover */
-  color: #C3AC98;
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
+
 /* Style for info column */
 .info-column {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 48px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
   background: #F0EAE2;
-  display: flex;
-  flex-direction: row; /*lægger boksene vandret */
-  justify-content: center; /*Centrere boksene på siden*/
-  align-items: flex-start;
-  gap: 8px;
-  margin: 150px auto;
-  max-width: 1200px; /* Maksimal bredde for kolonnen */
-  width: 100%;
-  padding: 0 48px; /* Lidt padding til venstre og højre */
 }
 
 .info-box {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  background: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 16px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.info-box p {
+  margin: 0;
   color: #8D664F;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 1.2rem;
-  width: auto;
-  max-width: none;
-  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 /* style for ikonerne i info column */
 .info-icon {
-  height: 55px !important;
-  width: 55px !important;
-  vertical-align: middle;
-  margin-right: 12px;
+  height: 50px;
+  width: 50px;
   object-fit: contain;
- 
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .info-column {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-column {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 32px 16px;
+  }
+
+  .info-box {
+    padding: 20px 12px;
+  }
+
+  .info-icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  .info-box p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-column {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px 12px;
+  }
+
+  .info-box {
+    padding: 16px 12px;
+  }
+
+  .info-icon {
+    height: 35px;
+    width: 35px;
+  }
+
+  .info-box p {
+    font-size: 0.8rem;
+  }
 }
 
 /* Style for produkt felter */
@@ -231,42 +288,68 @@ padding: 64px 0;
 }
 
 .products-row {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  width: 100%;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 48px 32px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .product-card {
-  background: #AB8C78;
-  flex: 1 1 0;
-  min-width: 0; /* Sikrer at kortene kan skaleres ned */
-  max-width: 100%; /* Maksimal bredde for kortene */
-  border-radius: 10px;
-  padding: 32px;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-card img {
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-image {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
 }
 
 .product-card p {
   color: #8D664F;
-  font-weight: 300; /* Tyndere end normal */
-  font-size: small;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  font-size: 1rem;
 }
 
+/* Shop button inside product cards */
+.product-shop-button {
+  display: inline-block;
+  background: #8D664F;
+  color: #FFFFFF;
+  padding: 10px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  margin-top: 8px;
+}
 
+.product-shop-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
 
-/* totebag sektion */
-.totebag-card {
+/* featured produkter sektion */
+.totebag-products {
   margin: 100px auto;
   text-align: center;
 }
@@ -279,7 +362,7 @@ padding: 64px 0;
 .totebag-subtitle {
   font-size: 1.2em;
   color: #8D664F;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-weight: 300;
 }
 
@@ -312,21 +395,14 @@ box-sizing: border-box;
   margin-bottom: 12px;
 }
 
-.featured-card p {
-  color: #8D664F;
-  font-weight: 300; /* Tyndere end normal */
-  font-size: small;
-}
 
-
-
-/* Style for Instagram sektion */
+/* Style for Totebag sektion */
 .totebag-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0; /* Ingen mellemrum mellem billederne */
-  margin: 80px auto;
+  gap: 36px; /* Ingen mellemrum mellem billederne */
+  margin: 60px auto;
   max-width: 1200px; /* Maksimal bredde for kolonnen */
 }
 
@@ -342,8 +418,8 @@ box-sizing: border-box;
 
 /* Style for footer */
 .site-footer {
-  background: #F0EAE2;
-  color: #8D664F;
+  background: #8D664F;
+  color: #fffefd;
   padding: 24px 8px;
   display: flex;
   flex-direction: row;
@@ -352,6 +428,8 @@ box-sizing: border-box;
   font-size: 0.85rem; /* Rettet typo */
   gap: 18px;
 }
+
+.footer-row
 
 .footer-section {
   flex: 1 1 100px;
@@ -388,13 +466,14 @@ box-sizing: border-box;
 }
 
 .footer-logo-main {
-  height: 40px;
+  height: 80px;
   max-width: 90px;
   width: auto;
   object-fit: contain;
   margin-bottom: 3px;
   display: block;
-  margin-left: 0;   /* Flytter logoet til højre */
+  margin-left: 16px;   /* Flytter logoet til højre */
   margin-right: auto;
-
 }
+
+
