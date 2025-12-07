@@ -9,20 +9,20 @@
   padding: 0;
   box-sizing: border-box;
 }
-.cutive-mono-regular {
-  font-family: "Cutive Mono", monospace;
+.inter-regular {
+  font-family: "Inter", inter;
   font-weight: 400;
   font-style: normal;
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Libertinus+Keyboard&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Libertinus+Keyboard&display=swap');
 
 body {
   /* Skrifttype og størrelse */
-font-family: "Inter", monospace;
+font-family: "Inter", inter;
 font-size: 1.5rem;
-background-color: #F0EAE2;
+background-color: oklab(0% #F0EAE2, 100% #8D664F);
 }
 /* Define variables in the :root */
  
@@ -77,50 +77,21 @@ background-color: #F0EAE2;
   vertical-align: middle;
   margin-right: 8px;
   display: inline-block;
-  overflow: hidden;
+  overflow: visible;
 }
 
+.topnav-icon {
+  height: 50px;
+  max-height: 50px;
+  width: auto;
+  max-width: 100px;
+  vertical-align: flex-start;
+  margin-right: 8px;
+  overflow: visible;
+}
 
 body {
   margin-top: 100px; /* Samme som nav-højde */
-}
-
-/* Style for main menu */
-/*main menu: gennemsigtig og overpå hero*/
-
-.main-menu {
-  position: absolute;
-top: 40px; /*lige under top-nav */
-left: 0;
-width: 100%;
-background: #F0EAE2; 
-z-index: 1100;
-display: flex;
-justify-content: center;
-padding: 64px 0;
-}
-
-.main-menu ul {
-  display: flex;
-  gap: 96px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.main-menu li a {
-  color:#fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 32px 48px;
-  border-radius: 16px;
-  transition: background 0.2s;
-
-}
-
-.main-menu li a:hover {
-  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Style for header */
@@ -147,7 +118,7 @@ padding: 64px 0;
 
 /* keep header content above the video */
 .header-content {
-  position: relative;
+  position: bottom;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -157,12 +128,9 @@ padding: 64px 0;
   height: 100%;
 }
 
-/* style for header knapper */
-.shop-now-button {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+/* style for filter knapper */
+.filter-button {
+  display: inline-block;
   background: #8D664F;
   color: #FFFFFF;
   padding: 32px 48px;
@@ -171,11 +139,9 @@ padding: 64px 0;
   font-weight: 700;
   font-size: 1rem;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
-  z-index: 3;
 }
 
-.shop-now-button:hover {
-  transform: translateX(-50%) translateY(-3px);
+.product-shop-button:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -197,7 +163,7 @@ padding: 64px 0;
   justify-content: center;
   gap: 12px;
   padding: 24px 16px;
-  background: #FFFFFF;
+  background: #AB8C78;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
@@ -419,7 +385,7 @@ box-sizing: border-box;
 /* Style for footer */
 .site-footer {
   background: #8D664F;
-  color: #fffefd;
+  color: #ffffff;
   padding: 24px 8px;
   display: flex;
   flex-direction: row;
