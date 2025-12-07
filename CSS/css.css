@@ -20,10 +20,16 @@
 
 body {
   /* Skrifttype og størrelse */
-font-family: "Inter", inter;
-font-size: 1.5rem;
-background-color: oklab(0% #F0EAE2, 100% #8D664F);
+  font-family: "Inter", inter;
+  font-size: 1.5rem;
+
+  /* page background: top -> bottom gradient */
+  background: linear-gradient(180deg, #F0EAE2 0%, #8D664F 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
 }
+
 /* Define variables in the :root */
  
 
@@ -153,7 +159,9 @@ body {
   padding: 48px 32px;
   max-width: 1400px;
   margin: 0 auto;
-  background: #F0EAE2;
+
+  /* let the page gradient show through */
+  background: transparent;
 }
 
 .info-box {
@@ -250,7 +258,7 @@ body {
 .products-title {
   font-size: 1em;
   margin-bottom: 48px;
-  color: #8D664F;
+  color: #ffffff;
 }
 
 .products-row {
@@ -268,7 +276,7 @@ body {
   align-items: center;
   gap: 16px;
   padding: 24px;
-  background: #FFFFFF;
+  background: #AB8C78;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -288,7 +296,7 @@ body {
 }
 
 .product-card p {
-  color: #8D664F;
+  color: #ffffff;
   font-weight: 600;
   text-align: center;
   margin: 0;
@@ -298,7 +306,7 @@ body {
 /* Shop button inside product cards */
 .product-shop-button {
   display: inline-block;
-  background: #8D664F;
+  background: transparent;
   color: #FFFFFF;
   padding: 10px 24px;
   border-radius: 24px;
@@ -314,73 +322,71 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* featured produkter sektion */
-.totebag-products {
-  margin: 100px auto;
-  text-align: center;
+/* totebag horizontal scroll */
+.totebag-card {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #F0EAE2;
+  border-radius: 12px;
 }
 
 .totebag-title {
   font-size: 2em;
-  color: #8D664F
+  color: #8D664F;
+  margin: 0 0 16px;
+  text-align: left;
 }
 
 .totebag-subtitle {
-  font-size: 1.2em;
+  margin: 0;
   color: #8D664F;
-  margin-bottom: 20px;
-  font-weight: 300;
+  font-size: 1rem;
+  text-align: left;
 }
 
-.totebag-row {
+.totebag-images-scroll {
   display: flex;
-  justify-content: center;
-  gap: 48px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  align-items: stretch;
 }
 
-.totebag-card {
-  background: #F0EAE2;
-  flex: 1 1 0;
-  min-width: 0; /* Sikrer at kortene kan skaleres ned */
-  max-width: 100%; /* Maksimal bredde for kortene */
-  border-radius: 10px;
-  padding: 40px;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-box-sizing: border-box;
-}
-
-
-.totebag-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-
-/* Style for Totebag sektion */
-.totebag-row {
+.totebag-item {
+flex: 0 0 420px;        
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  gap: 16px;
   align-items: center;
-  gap: 36px; /* Ingen mellemrum mellem billederne */
-  margin: 60px auto;
-  max-width: 1200px; /* Maksimal bredde for kolonnen */
-}
-
-.totebag-row img {
-  width: 25%; /* Hvert billede tager 25% af bredden */
-  height: auto;
-  object-fit: cover; /* Billederne dækker deres container */
-  border-radius: 10px;
-  display: block;
+  background: rgba(255,255,255,0.9);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  min-height: 140px;
 }
 
 
+.totebag-item {
+  width: 140px;
+  height: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+
+/* info column inside each item */
+.totebag-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-start;
+}
 
 /* Style for footer */
 .site-footer {
@@ -395,7 +401,6 @@ box-sizing: border-box;
   gap: 18px;
 }
 
-.footer-row
 
 .footer-section {
   flex: 1 1 100px;
