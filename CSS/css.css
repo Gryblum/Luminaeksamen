@@ -154,23 +154,55 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* style for filter knapper */
-.filter-button {
-  display: inline-block;
-  background: #8D664F;
-  color: #FFFFFF;
-  padding: 32px 48px;
-  border-radius: 32px;
+/* Center filter bar above product cards */
+.filter-bar {
+  display: flex;
+  justify-content: center; /* center horizontal */
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  max-width: 1400px;       /* same width as products-row */
+  margin: 0 auto 24px;     /* centered and spaced above products */
+  box-sizing: border-box;
+}
+
+/* filterbar above grid */
+.filter-bar .filter-button {
+  padding: 8px 16px;
+  border-radius: 999px;
   font-weight: 700;
-  font-size: 1rem;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  font-size: 0.95rem;
+  background: transparent; 
+  color: #FFFFFF;
+  border: 2px solid #715347;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s;
+}
+
+.filter-bar .filter-button:hover,
+.filter-bar .filter-button:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  background: rgb(115, 83, 47);
+}
+
+/* Responsive: reduce gap and button padding on small screens */
+@media (max-width: 768px) {
+  .filter-bar {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+  .filter-bar .filter-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
 }
 
 .product-shop-button:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for info column */
+/* Style info column */
 .info-column {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -206,17 +238,17 @@ body {
   font-size: 0.95rem;
 }
 
-/* style for ikonerne i info column */
+/* style icons in info column */
 .info-icon {
   height: 50px;
   width: 50px;
   object-fit: fill;
 }
 
-/* Style for produkt felter */
+/* Style product felter */
 
 .products-title {
-  font-size: 1em;
+  font-size: 1.5em;
   margin-bottom: 48px;
   color: #ffffff;
 }
@@ -293,7 +325,7 @@ body {
 }
 
 .totebag-title {
-  font-size: 2em;
+  font-size: 1.5em;
   color: #8D664F;
   margin: 0 0 16px;
   text-align: left;
@@ -303,7 +335,7 @@ body {
   margin: 0;
   color: #8D664F;
   font-size: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .totebag-subtext {
@@ -315,7 +347,7 @@ body {
 
 .totebag-images-scroll {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   overflow-x: auto;
   overflow-y: scroll;
   padding-bottom: 8px;
@@ -326,9 +358,8 @@ body {
 flex: 0 0 420px;        
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 36px;
   align-items: center;
-  background: transparent;
   border-radius: 12px;
   min-height:300px;
   max-height: 300px;
@@ -337,7 +368,7 @@ flex: 0 0 420px;
   object-fit: cover;
 }
 
-/* Style for footer */
+/* Style footer */
 .site-footer {
   background: #8D664F;
   color: #ffffff;
@@ -346,7 +377,7 @@ flex: 0 0 420px;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  font-size: 0.85rem; /* Rettet typo */
+  font-size: 0.85rem; /* Corrected typo */
   gap: 18px;
 }
 
@@ -368,6 +399,13 @@ flex: 0 0 420px;
   gap: 8px;
 }
 
+.footer-logo-row p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
 .footer-logo {
   height: 39px;
   margin-bottom: 0;
@@ -375,12 +413,12 @@ flex: 0 0 420px;
 }
 
 .footer-logo-small {
-  height: 30px;
+  height: 50px;
   display: block;
 }
 
 .site-footer p {
-  margin: 0;
+  margin: 16px;
   font-weight: 300;
   font-size: 0.85rem;
 }
