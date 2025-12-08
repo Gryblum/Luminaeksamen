@@ -76,14 +76,11 @@ body {
 }
 
 .topnav-logo {
-  height: 150px;
-  max-height: 150px;
-  width: auto;
-  max-width: 150px;
-  vertical-align: middle;
-  margin-right: 8px;
-  display: inline-block;
-  overflow: visible;
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 
 .topnav-icon {
@@ -363,57 +360,82 @@ body {
 
 /* totebag horizontal scroll */
 .totebag-card {
-  padding: 32px;
-  max-width: 1200px;
-  margin: 40px auto;
+  width: 100%;
+  max-width: none;
+  margin: 40px 0;
+  padding: 32px 0;      
   background: #F0EAE2;
-  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .totebag-title {
   font-size: 1.5em;
   color: #8D664F;
   margin: 0 0 16px;
-  text-align: left;
+  text-align: center;
+  width: 100%;
+  padding: 0 32px;
 }
 
 .totebag-subtitle {
-  margin: 0;
+  margin: 24px 0 8px ;
   color: #8D664F;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-align: center;
+  font-weight: 600;
+  order: 1;
 }
 
 .totebag-subtext {
-  margin: 0;
+  margin: 0 0 32px;
   color: #8D664F;
   font-size: 1rem;
   text-align: center;
+  order: 3;
 }
 
 .totebag-images-scroll {
   display: flex;
   gap: 24px;
   overflow-x: auto;
-  overflow-y: scroll;
-  padding-bottom: 8px;
+  overflow-y: hidden;
+  padding: 12px 32px;
   align-items: stretch;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  order: 1;
+
+  /* same edge-to-edge technique as footer */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .totebag-item {
-flex: 0 0 420px;        
+  flex: 0 0 420px;
   display: flex;
   flex-direction: row;
   gap: 36px;
   align-items: center;
   border-radius: 12px;
-  min-height:300px;
+  min-height: 300px;
   max-height: 300px;
   height: 100%;
-  width: 140px;
-  object-fit: cover;
+  box-sizing: border-box;
 }
 
+.totebag-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
 
 /* Footer styles */
 .site-footer {
@@ -422,8 +444,10 @@ flex: 0 0 420px;
   gap: 32px;
   padding: 48px 32px;
   background: #8D664F;
-  max-width: 1400px;
-  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .footer-section {
@@ -440,7 +464,7 @@ flex: 0 0 420px;
 }
 
 .footer-section p {
-  margin: 0;
+  margin: 16px;
   color: #FFFFFF;
   font-weight: 600;
 }
@@ -501,8 +525,8 @@ flex: 0 0 420px;
 }
 
 .footer-social-icons img {
-  height: 28px;
-  width: 28px;
+  height: 36px;
+  width: 36px;
   object-fit: contain;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -551,5 +575,18 @@ flex: 0 0 420px;
     justify-content: center;
   }
 }
+
+/* footer goes edge-to-edge on all viewports */
+@supports (width: 100vw) {
+  .site-footer {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
+
 
 
