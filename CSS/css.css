@@ -195,20 +195,20 @@ body {
   display: flex;
   justify-content: center; 
   align-items: center;
-  gap: 12px;
-  padding: 16px 24px;
-  width: calc(100% - 48px);
+  gap: 16px;
+  padding: 20px 32px;
+  width: calc(100% - 64px);
   max-width: 2000px;       
-  margin: 0 auto 24px;     /* centered and spaced above products */
+  margin: 48px auto 48px;     /* centered and spaced above products */
   box-sizing: border-box;
 }
 
 /* filterbar over grid */
 .filter-bar .filter-button {
-  padding: 8px 16px;
+  padding: 12px 24px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
   background: #715347; 
   color: #FFFFFF;
   border: 2px solid #715347;
@@ -225,12 +225,13 @@ body {
 /* Responsive: reduce gap and button padding on small screens */
 @media (max-width: 768px) {
   .filter-bar {
-    padding: 12px 16px;
-    gap: 8px;
+    padding: 16px 20px;
+    gap: 12px;
+    width: calc(100% - 40px);
   }
   .filter-bar .filter-button {
-    padding: 6px 12px;
-    font-size: 0.9rem;
+    padding: 10px 18px;
+    font-size: 0.95rem;
   }
 }
 
@@ -245,7 +246,7 @@ body {
   gap: 12px;
   padding: 24px 32px;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 48px auto 48px;
   background: transparent;
   align-items: center;
 }
@@ -421,8 +422,8 @@ body {
 .totebag-card {
   width: 100%;
   max-width: none;
-  margin: 40px 0;
-  padding: 32px 0;      
+  margin: 0 0;
+  padding: 48px 0;      
   background: #F0EAE2;
   box-sizing: border-box;
   display: flex;
@@ -432,37 +433,43 @@ body {
 
 /* Totebag titel */
 .totebag-title {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #8D664F;
-  margin: 0 0 16px;
+  margin: 0 50px 0;
   text-align: center;
   width: 100%;
-  padding: 100px 80px;
+  padding: 100px 100px 50px 50px;
 }
 
 /* Totebag subtitle */
 .totebag-subtitle {
-  margin: 24px 0 8px ;
-  color: #8D664F;
-  font-size: 1.1rem;
-  text-align: center;
-  font-weight: 600;
+  font-size: 1.2em;
+  min-width: 200px;
+  background-color: transparent;
+  font-weight: lighter;
+  padding: 10px;
+  border-radius: 12px;
+  color:#8D664F;
 }
 
 /* Totebag subtext */
 .totebag-subtext {
-  margin: 0 0 32px;
-  color: #8D664F;
-  font-size: 1rem;
-  text-align: center;
+  font-size: 1em;
+  min-width: 330px;
+  background-color: transparent;
+  font-style: italic;
+  padding: 20px;
+  border-radius: 12px;
+  color:#8D664F;
 }
 
 .totebag-images-scroll {
   display: flex;
   gap: 24px;
+  grid-auto-flow: column;
+  grid-auto-columns: 17%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 12px 32px;
   align-items: stretch;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -475,11 +482,21 @@ body {
   transform: translateX(-50%);
 }
 
+  .media-scroller {
+    display: grid; 
+    gap: var(--size-3);
+    grid-auto-flow: column;
+    grid-auto-columns: 36%;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+
 .totebag-item {
-  flex: 0 0 420px;
+  flex: 0 0 0px;
   display: flex;
   flex-direction: row;
-  gap: 36px;
+  gap: 21px;
   align-items: center;
   border-radius: 12px;
   min-height: 300px;
@@ -489,10 +506,10 @@ body {
 }
 
 .totebag-item-image {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 400px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 0;
   flex-shrink: 0;
 }
 
