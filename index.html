@@ -7,12 +7,17 @@
   <title>Lumina</title>
   <link rel="stylesheet" href="css/css.css">
 </head>
-
 <body>
+
   <!-- top nav bar -->
+   
+<div class="app">
+
 <nav class="top-nav">
   <span class="nav-left">
-    <img src="Images/arrow-left.png" alt="pil ikon" class="topnav-icon">
+    <button class="topnav-button" aria-label="Back">
+      <img src="Images/iconback.png" alt="pil ikon" class="topnav-icon">
+    </button>
   </span>
   <span class="nav-center">
     <img src="Images/logo.png" alt="logo" class="topnav-logo">
@@ -75,7 +80,7 @@
   <!-- Totebag billeder sektion -->
 
   <section class="totebag-card">
-    <!-- Horizontal scroll container with title as first item on the left -->
+    <!-- Horizontal scroll container med titel -->
     <div class="totebag-images-scroll" role="list">
       <div class="totebag-scroll-title" role="listitem">
         <h1 class="totebag-title">Limited Offer</h1>
@@ -117,6 +122,7 @@
     <div class="product-card">
       <img src="Images/green1.png" alt="Produkt 1" class="product-image">
       <p>Lumina Audio One</p>
+      <p2>Premium home audio system</p2>
       <p>Kr. 1.400</p>
       <button class="product-shop-button">Buy now</button>
     </div>
@@ -124,6 +130,7 @@
     <div class="product-card">
       <img src="Images/blue1.PNG" alt="Produkt 2" class="product-image">
       <p>Lumina Audio One</p>
+      <p2>Premium home audio system</p2>
       <p>Kr. 1.400</p>
       <button class="product-shop-button">Buy now</button>
     </div>
@@ -131,6 +138,7 @@
     <div class="product-card">
       <img src="Images/brown1.PNG" alt="Produkt 3" class="product-image">
       <p>Lumina Audio One</p>
+      <p2>Premium home audio system</p2>
       <p>Kr. 1.400</p>
       <button class="product-shop-button">Buy now</button>
     </div>
@@ -138,6 +146,7 @@
     <div class="product-card">
       <img src="Images/purple1.png" alt="Produkt 4" class="product-image">
       <p>Lumina Audio One</p>
+      <p2>Premium home audio system</p2>
       <p>Kr. 1.400</p>
       <button class="product-shop-button">Buy now</button>
     </div>
@@ -145,6 +154,7 @@
     <div class="product-card">
       <img src="Images/red1.png" alt="Produkt 5" class="product-image">
       <p>Lumina Audio One</p>
+      <p2>Premium home audio system</p2>
       <p>Kr. 1.400</p>
       <button class="product-shop-button">Buy now</button>
     </div>
@@ -152,6 +162,7 @@
     <div class="product-card">
       <img src="Images/white1.png" alt="Produkt 6" class="product-image">
       <p>Lumina Audio One</p>
+      <p2>Premium home audio system</p2>
       <p>Kr. 1.400</p>
       <button class="product-shop-button">Buy now</button>
     </div>
@@ -159,10 +170,10 @@
 
   <!-- Footer -->
 <footer class="site-footer">
-  <!-- Section 1: Logo and tagline -->
-  <div class="footer-section">
+  <!-- Section 1: Logo and text -->
+  <div class="footer-section" footer-logo-section>
     <img src="Images/roundlogo.png" alt="Lumina logo" class="footer-logo-main">
-    <p>Share the music</p>
+    <p class="footer-text">Share the music</p>
   </div>
 
   <!-- Section 2: Quick Links -->
@@ -203,11 +214,14 @@
       <img src="Images/tiktok.png" alt="TikTok" class="footer-logo-small">
     </div>
   </div>
-</footer>
 
 <!-- Copyright -->
-<div class="footer-copyright">
+ <div class="footer-copyright">
   <p>© 2025 Lumina Audio<br>All rights reserved</p>
-</div>
+ </div>
+</footer>
+
+<!-- Javascript file -->
+<script src="js/app.js"></script>
 </body>
 </html>

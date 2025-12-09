@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Sage Green",
+    "title": "Lumina Audio One Speaker",
     "description": "Our Popular speaker in a beautiful sage green color.",
     "image": "images/green1.png",
     "genre": "Speaker",
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "title": "Dusty Rose",
+    "title": "Lumina Audio One Speaker",
     "description": "Our Popular speaker in a beautiful dusty rose color.",
     "image": "images/red1.png",
     "genre": "Speaker",
@@ -25,7 +25,7 @@
   },
     {
     "id": 3,
-    "title": "Lavender Mist",
+    "title": "Lumina Audio One Speaker",
     "description": "Our Popular speaker in a beautiful lavender mist color.",
     "image": "images/purple1.png",
     "genre": "Speaker",
@@ -37,7 +37,7 @@
   },
     {
     "id": 4,
-    "title": "Moonlight White",
+    "title": "Lumina Audio One Speaker",
     "description": "Our Popular speaker in a beautiful moonlight white color.",
     "image": "images/white1.png",
     "genre": "Speaker",
@@ -49,7 +49,7 @@
   },
       {
     "id": 5,
-    "title": "Earthy Brown",
+    "title": "Lumina Audio One Speaker",
     "description": "Our Popular speaker in a beautiful earthy brown color.",
     "image": "images/brown1.png",
     "genre": "Speaker",
@@ -61,7 +61,7 @@
   },
      {
     "id": 6,
-    "title": "Sky Blue",
+    "title": "Lumina Audio One Speaker",
     "description": "Our Popular speaker in a beautiful sky blue color.",
     "image": "images/blue1.png",
     "genre": "Speaker",
@@ -73,8 +73,8 @@
   },    
     {
     "id": 7,
-    "title": "Totebag - Off White",
-    "description": "Our Popular tote bag in a beautiful off white color. To protect your speaker while you bring it everywhere",
+    "title": "Lumina Totebag",
+    "description": "Our Popular tote bag in a beautiful off white color. To protect your speakers on the go.",
     "image": "images/tote1.png",
     "genre": "Accessory",
     "Restitance": "Scratch and shock resistant",
