@@ -430,7 +430,6 @@ body {
   font-size: 1.1rem;
   text-align: center;
   font-weight: 600;
-  order: 1;
 }
 
 /* Totebag subtext */
@@ -439,7 +438,6 @@ body {
   color: #8D664F;
   font-size: 1rem;
   text-align: center;
-  order: 3;
 }
 
 .totebag-images-scroll {
@@ -452,7 +450,6 @@ body {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
-  order: 1;
 
   /* edge-to-edge technique */
   width: 100vw;
